@@ -352,7 +352,7 @@ function calculateChampionshipChanceAndSet(weekRemaining, teams) {
     if (!requiredPts) {
         firstTeam.championshipChance = 'champion'
     } else {
-        firstTeam = compareTeamsChance(secondTeam, firstTeam, requiredPts);
+        firstTeam = compareTeamsChance(secondTeam, firstTeam, requiredPts, true);
     }
 
     var newTeams = [firstTeam];
@@ -366,27 +366,41 @@ function calculateChampionshipChanceAndSet(weekRemaining, teams) {
     return teams;
 }
 
-function compareTeamsChance(firstTeam, otherTeam, requiredPts) {
-    var ptsDifference = Math.abs(firstTeam.points - otherTeam.points);
+function compareTeamsChance(firstTeam, otherTeam, requiredPts, isFirst) {
+    if (isFirst) {
+        var ptsDifference = otherTeam.points - firstTeam.points;
 
-    if (!requiredPts) {
-        otherTeam.championshipChance = 'no chance';
-    } else {
-        if (ptsDifference === 0) {
+        if (ptsDifference == 0) {
             otherTeam.championshipChance = "high chance";
         } else if (ptsDifference > requiredPts) {
-            otherTeam.championshipChance = "impossible";
+            otherTeam.championshipChance = "champion";
         } else if (ptsDifference < requiredPts) {
-            if (firstTeam.points > otherTeam.points) {
-                otherTeam.championshipChance = "problably";
-            } else {
+            otherTeam.championshipChance = "problably";
+        } else if (ptsDifference == requiredPts) {
+            otherTeam.championshipChance = "high chance";
+        }
+    } else {
+        var ptsDifference = Math.abs(firstTeam.points - otherTeam.points);
+
+        if (!requiredPts) {
+            otherTeam.championshipChance = 'no chance';
+        } else {
+            if (ptsDifference === 0) {
                 otherTeam.championshipChance = "high chance";
-            }
-        } else if (ptsDifference === requiredPts) {
-            if (firstTeam.points > otherTeam.points) {
-                otherTeam.championshipChance = "low chance";
-            } else {
-                otherTeam.championshipChance = "problably";
+            } else if (ptsDifference > requiredPts) {
+                otherTeam.championshipChance = "impossible";
+            } else if (ptsDifference < requiredPts) {
+                if (firstTeam.points > otherTeam.points) {
+                    otherTeam.championshipChance = "problably";
+                } else {
+                    otherTeam.championshipChance = "high chance";
+                }
+            } else if (ptsDifference === requiredPts) {
+                if (firstTeam.points > otherTeam.points) {
+                    otherTeam.championshipChance = "low chance";
+                } else {
+                    otherTeam.championshipChance = "problably";
+                }
             }
         }
     }
