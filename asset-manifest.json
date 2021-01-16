@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/soccer-simulator-react/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/soccer-simulator-react/static/js/main.ec94a7e5.chunk.js",
+    "main.js.map": "/soccer-simulator-react/static/js/main.ec94a7e5.chunk.js.map",
+    "runtime-main.js": "/soccer-simulator-react/static/js/runtime-main.1b2e5867.js",
+    "runtime-main.js.map": "/soccer-simulator-react/static/js/runtime-main.1b2e5867.js.map",
+    "static/js/2.862e2a5a.chunk.js": "/soccer-simulator-react/static/js/2.862e2a5a.chunk.js",
+    "static/js/2.862e2a5a.chunk.js.map": "/soccer-simulator-react/static/js/2.862e2a5a.chunk.js.map",
+    "static/js/3.77ad7150.chunk.js": "/soccer-simulator-react/static/js/3.77ad7150.chunk.js",
+    "static/js/3.77ad7150.chunk.js.map": "/soccer-simulator-react/static/js/3.77ad7150.chunk.js.map",
+    "index.html": "/soccer-simulator-react/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/soccer-simulator-react/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.862e2a5a.chunk.js.LICENSE.txt": "/soccer-simulator-react/static/js/2.862e2a5a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1b2e5867.js",
+    "static/js/2.862e2a5a.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.ec94a7e5.chunk.js"
+  ]
+}
